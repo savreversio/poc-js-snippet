@@ -1,0 +1,43 @@
+.shareByLinkButton {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 0px;
+    line-height: 20px;
+    font-weight: 500;
+    text-transform: inherit;
+    height: 38px;
+    width: auto;
+    min-width: 38px;
+    min-height: 38px;
+    position: relative;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 155, 255);
+    white-space-collapse: collapse;
+    text-wrap: nowrap;
+    outline: 0px;
+    padding: 0.5rem;
+    overflow: hidden;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: transparent;
+    border-image: initial;
+    transition: background-color 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) 0s, transform, opacity, color, padding-left;
+}
+
+.shareByLinkButton:hover {
+    color: rgb(255, 255, 255);
+    border: 1px solid transparent;
+    background-color: rgb(0, 109, 179);
+}
+
+.shareByLinkButton:active {
+    transform: scale(0.96);
+    opacity: 0.8;
+}
