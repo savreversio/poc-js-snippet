@@ -1,0 +1,19 @@
+{
+  "name": "poc-js-snippet",
+  "version": "1.0.0",
+  "description": "poc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/savreversio/poc-js-snippet.git"
+  },
+  "author": "reversio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/savreversio/poc-js-snippet/issues"
+  },
+  "homepage": "https://github.com/savreversio/poc-js-snippet#readme"
+}
