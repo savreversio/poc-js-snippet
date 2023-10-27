@@ -15,7 +15,7 @@ export const ShareByLink: FC =
     },
     [],
   );
-
+    console.log('ok')
   return (
     <>
       <Button onClick={handleClick}>Share by link</Button>
