@@ -14,7 +14,7 @@ const ShareByLink: FunctionComponent =
     },
     [],
   );
-
+    console.log('ok')
   return (
     <>
       <Button onClick={handleClick}>Share by link</Button>
