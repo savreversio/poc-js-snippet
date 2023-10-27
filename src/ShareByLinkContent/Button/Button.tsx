@@ -5,16 +5,17 @@ import './Button.css';
 
 interface ButtonComponentProps {
 onClick?: React.MouseEventHandler<HTMLButtonElement>;
+isLoading?: boolean;
 }
 
 const Button: FunctionComponent<React.PropsWithChildren<ButtonComponentProps>> = ({
-onClick = () => null,
-children
+    onClick = () => null,
+    children,
+    isLoading = false
 }) => {
-
 return ( 
     <button
-        className='shareByLinkButton'
+        className={`shareByLinkButton ${isLoading ? 'shareByLinkButtonCursor' : null}`}
         type="button"
         onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
             if (onClick) {

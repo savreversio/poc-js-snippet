@@ -21,7 +21,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "pc-js-snippet/src"
+    "poc-js-snippet/src"
   ],
   "references": [{ "path": "./tsconfig.node.json"}]
 }

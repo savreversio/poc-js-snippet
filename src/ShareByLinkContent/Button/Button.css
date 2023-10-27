@@ -31,6 +31,10 @@
     transition: background-color 0.5s cubic-bezier(0.1, 0.9, 0.2, 1) 0s, transform, opacity, color, padding-left;
 }
 
+.shareByLinkButtonCursor {
+    cursor: progress;
+}
+
 .shareByLinkButton:hover {
     color: rgb(255, 255, 255);
     border: 1px solid transparent;
