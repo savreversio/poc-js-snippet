@@ -1,8 +1,9 @@
-import { FunctionComponent, useCallback, useState } from "react";
+import React, { FC, useCallback, useState } from "react";
+
 import Button from "./Button/Button"
 
 
-const ShareByLink: FunctionComponent =
+export const ShareByLink: FC =
  () =>
   {
   const [randomNumber, setRandomNumber] = useState(0);
@@ -24,5 +25,3 @@ const ShareByLink: FunctionComponent =
 }
 
 ShareByLink.displayName = "ShareByLink";
-
-export default ShareByLink

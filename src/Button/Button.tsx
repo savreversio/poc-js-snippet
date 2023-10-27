@@ -12,7 +12,7 @@ onClick = () => null,
 children
 }) => {
 
-return (
+return ( 
     <button
         className='shareByLinkButton'
         type="button"
