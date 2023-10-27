@@ -1,27 +1,23 @@
-import React, { FC, useCallback, useState } from "react";
+import React, { FC } from "react";
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-import Button from "./Button/Button"
+import { ShareByLinkContent } from "./ShareByLinkContent/ShareByLinkContent";
+
+interface ShareByLinkProps {
+  orderId: string;
+}
 
 
-export const ShareByLink: FC =
- () =>
+const queryClient = new QueryClient();
+
+export const ShareByLink: FC<ShareByLinkProps> =
+ ({orderId}) =>
   {
-  const [randomNumber, setRandomNumber] = useState(0);
-  const [isButtonClicked, setIsButtonClicked] = useState(false);
-  const handleClick = useCallback(
-    () => {
-      setIsButtonClicked(true);
-      setRandomNumber(Math.random() * 100)
-    },
-    [],
-  );
-    console.log('ok')
   return (
-    <>
-      <Button onClick={handleClick}>Share by link</Button>
-      {isButtonClicked ? <div>Value : {randomNumber}</div> : null}
-    </>
-  )
+    <QueryClientProvider client={queryClient}>
+      <ShareByLinkContent orderId={orderId} />
+    </QueryClientProvider>
+ )
 }
 
 ShareByLink.displayName = "ShareByLink";

@@ -35,7 +35,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rm": "^0.1.8"
+    "rm": "^0.1.8",
+    "react-query": "^3.39.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
