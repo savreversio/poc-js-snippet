@@ -1,22 +1,34 @@
 import React, {
 FunctionComponent,
 } from 'react';
-import './Button.css';
+import './ShareByLinkInput.css';
+import * as clipboardy from 'clipboardy';
 
 interface ShareByLinkInputComponentProps {
-onClick?: React.MouseEventHandler<HTMLButtonElement>;
-isLoading?: boolean;
+link?: string;
 }
 
 const ShareByLinkInput: FunctionComponent<ShareByLinkInputComponentProps> = ({
-    onClick = () => null,
-    isLoading = false
+    link
 }) => {
+    const handleButtonClick = async () => {
+    if (link) {
+        await clipboardy.write(String(link));
+    }
+    };
+
 return ( 
     <div
-        className={`shareByLinkInput`}
+        className={`shareByLinkInputContainer`}
         >
-            <input />
+            <input value={link} className='shareByLinkInput'/>
+            <button
+              className='shareByLinkButtonCopy'
+              type="button"
+              onClick={handleButtonClick}
+            >
+              Copy link
+            </button>
     </div>
 );
 };

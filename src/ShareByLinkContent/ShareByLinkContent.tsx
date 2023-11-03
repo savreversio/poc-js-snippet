@@ -2,6 +2,7 @@ import React, { FC, useCallback, useState } from "react";
 
 import Button from "./Button/Button"
 import { useMutation } from "react-query";
+import ShareByLinkInput from "./ShareByLinkInput/ShareByLinkInput";
 
 interface ShareByLinkContentProps {
   orderId: string;
@@ -10,7 +11,6 @@ interface ShareByLinkContentProps {
 export const ShareByLinkContent: FC<ShareByLinkContentProps> =
  ({orderId}) =>
   {
-  const [isButtonClicked, setIsButtonClicked] = useState(false);
   const [link, setLink] = useState(undefined);
 
   const {
@@ -57,7 +57,6 @@ export const ShareByLinkContent: FC<ShareByLinkContentProps> =
 
   const handleClick = useCallback(
     () => {
-      setIsButtonClicked(true);
       handleGetLink()
     },
     [handleGetLink],
@@ -65,8 +64,8 @@ export const ShareByLinkContent: FC<ShareByLinkContentProps> =
 
   return (
     <div className="shareByLinkContent">
-      <Button onClick={handleClick} isLoading={isLoading}>Share by link</Button>
-      {isButtonClicked && !isLoading ? <div>MyAccount link : {link} </div> : null}
+      {!link && <Button onClick={handleClick} isLoading={isLoading}>Share by link</Button>}
+      {link && !isLoading ? <ShareByLinkInput link={link} /> : null}
     </div>
   )
 }
