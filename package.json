@@ -33,11 +33,11 @@
   },
   "homepage": "https://github.com/savreversio/poc-js-snippet#readme",
   "dependencies": {
+    "clipboardy": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-query": "^3.39.1",
-    "rm": "^0.1.8",
-    "clipboardy": "^2.3.0"
+    "rm": "^0.1.8"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
