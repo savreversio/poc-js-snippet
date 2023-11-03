@@ -7,17 +7,19 @@ interface ShareByLinkProps {
   orderId: string;
 }
 
-
 const queryClient = new QueryClient();
 
 export const ShareByLink: FC<ShareByLinkProps> =
- ({orderId}) =>
+ ({orderId }) =>
   {
   return (
     <QueryClientProvider client={queryClient}>
-      <ShareByLinkContent orderId={"f1ea8c72-2c3e-4eb9-9ba7-889a1ebe8607"} />
+      <ShareByLinkContent orderId={orderId} />
     </QueryClientProvider>
  )
 }
 
 ShareByLink.displayName = "ShareByLink";
+
+// @ts-ignore
+window.ShareByLink = ShareByLink;

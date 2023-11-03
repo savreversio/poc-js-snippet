@@ -1,19 +1,30 @@
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
+import {defineConfig} from 'vite'
+import {resolve} from 'path'
 import react from '@vitejs/plugin-react'
 
-console.log(`${__dirname}\\src\\main.js`)
-
 // https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-  build: {
-    lib: {
-      // Could also be a dictionary or array of multiple entry points
-      entry: resolve( '.\\src\\ShareByLink.tsx'),
-      name: 'ReversShareLink',
-      // the proper extensions will be added
-      fileName: 'share-link',
+export default defineConfig(({mode}) => {
+    return {
+        define: {
+          'process.env.NODE_ENV': JSON.stringify(mode),
+        },
+        plugins: [react()],
+        build: {
+            lib: {
+                entry: resolve('.\\src\\ShareByLink.tsx'),
+                name: 'ReversShareLink',
+                fileName: 'share-link',
+                formats: ['es', 'umd']
+            },
+            rollupOptions: {
+                external: ['react', 'react-dom'],
+                output: {
+                    globals: {
+                        react: 'React',
+                        'react-dom': 'ReactDOM',
+                    },
+                },
+            },
+        },
     }
-  },
 })
