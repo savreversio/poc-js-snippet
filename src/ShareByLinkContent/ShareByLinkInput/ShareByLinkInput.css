@@ -1,0 +1,7 @@
+.shareByLinkInput {
+    background-color: transparent;
+    border: 1px solid #C9CED6;
+    border-radius: 4px;
+    text-align: center;
+    display: flex;
+}
